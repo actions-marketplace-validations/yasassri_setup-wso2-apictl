@@ -21,7 +21,7 @@ async function setup() {
   const pathToCLI = await tc.extractTar(pathToTarball);
 
   // Expose the tool by adding it to the PATH
-  core.addPath(pathToCLI)
+  core.addPath(pathToCLI + '/apictl')
 }
 
 module.exports = setup
