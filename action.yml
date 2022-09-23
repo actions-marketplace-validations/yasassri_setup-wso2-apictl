@@ -1,13 +1,14 @@
 name: 'setup-wso2-apictl'
-description: 'Greet someone and record the time'
+description: 'Setup WSO2 APICTL for WSO2 APIM/MI usecases'
 inputs:
-  url:  # id of input
-    description: 'CLI Binary location'
+  version: 
+    description: 'Version of the APICTL'
     required: false
-    default: 'https://apim.docs.wso2.com/en/4.1.0/assets/attachments/learn/api-controller/apictl-4.1.0-linux-x64.tar.gz'
-outputs:
-  time: # id of output
-    description: 'The time we greeted you'
+    default: '4.1.0'
+  tarball_location:
+    description: 'APTCTL Binary location if it needs to be downloaded from a custom location'
+    required: false
+    default: ''
 runs:
   using: 'node16'
   main: 'dist/index.js'

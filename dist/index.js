@@ -11,16 +11,22 @@ const tc = __nccwpck_require__(4512);
 const { getDownloadURL } = __nccwpck_require__(1287);
 
 async function setup() {
-  // Get version of tool to be installed
-  // const version = core.getInput('version');
-  console.log(`Downloading the APICTL Binary from ${getDownloadURL()}!`);
-  // Download the specific version of the tool, e.g. as a tarball
-  const pathToTarball = await tc.downloadTool(getDownloadURL());
+
+  var version = core.getInput('version');
+  var url = core.getInput('tarball-url');
+  
+  // If a URL not set, generate the URL based on the version
+  if(url) {
+    url = getDownloadURL(version)
+  }
+  console.log(`Downloading the APICTL Binary from ${url}`);
+  // Download the binary tarball
+  const pathToTarball = await tc.downloadTool(url);
 
   // Extract the tarball onto the runner
   const pathToCLI = await tc.extractTar(pathToTarball);
 
-  // Expose the tool by adding it to the PATH
+  // Expose the ctl by adding to the PATH
   core.addPath(pathToCLI + '/apictl')
 }
 
@@ -35,18 +41,19 @@ if (require.main === require.cache[eval('__filename')]) {
 /***/ 1287:
 /***/ ((module) => {
 
+// Two locations to download the Binary 
 // https://apim.docs.wso2.com/en/4.1.0/assets/attachments/learn/api-controller/apictl-4.1.0-linux-x64.tar.gz
-
 // https://github.com/wso2/product-apim-tooling/releases/download/v4.1.0/apictl-4.1.0-linux-x64.tar.gz
 
 
-// Improve this appropriately to setup different versions
-function getDownloadURL() {
-    // const platform = os.platform();
-    // const filename = `gh_${ version }_${ mapOS(platform) }_${ mapArch(os.arch()) }`;
-    // const extension = platform === 'win32' ? 'zip' : 'tar.gz';
-    // const binPath = platform === 'win32' ? 'bin' : path.join(filename, 'bin');
-    const url = 'https://github.com/wso2/product-apim-tooling/releases/download/v4.1.0/apictl-4.1.0-linux-x64.tar.gz';
+function getDownloadURL(version) {
+
+    // If the version is provided like v4.1.0 strippingout the 'v'
+    if(version.toLowerCase().includes("v")) {
+        version = version.substring(version.toLowerCase().indexOf('v') + 1)
+    }
+    const url = `https://github.com/wso2/product-apim-tooling/releases/download/v${version}/apictl-${version}-linux-x64.tar.gz`;
+
     return url
   }
   

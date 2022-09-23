@@ -1,0 +1,25 @@
+{
+  "name": "setup-wso2-apictl",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yasassri/setup-wso2-apictl.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yasassri/setup-wso2-apictl/issues"
+  },
+  "homepage": "https://github.com/yasassri/setup-wso2-apictl#readme",
+  "dependencies": {
+    "@actions/core": "^1.9.1",
+    "@actions/github": "^5.0.3",
+    "@actions/tool-cache": "^2.0.1"
+  }
+}
