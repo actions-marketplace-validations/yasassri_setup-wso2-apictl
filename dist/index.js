@@ -19,7 +19,7 @@ async function setup() {
   console.log("version:::: " +version)
   console.log("URL:::: " +url)
   // If a URL not set, generate the URL based on the version
-  if(url) {
+  if(url == null || url.trim() != '') {
     url = getDownloadURL(version)
   }
   console.log(`Downloading the APICTL Binary from ${url}`);
