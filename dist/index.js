@@ -13,7 +13,7 @@ const { getDownloadURL } = __nccwpck_require__(1287);
 async function setup() {
 
   var version = core.getInput('version');
-  var url = core.getInput('tarball-url');
+  var url = core.getInput('tarball_location');
   
   // If a URL not set, generate the URL based on the version
   if(url) {
