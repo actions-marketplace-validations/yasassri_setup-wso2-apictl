@@ -26,6 +26,10 @@ async function setup() {
 
 module.exports = setup
 
+if (require.main === require.cache[eval('__filename')]) {
+  setup();
+}
+
 /***/ }),
 
 /***/ 1287:
