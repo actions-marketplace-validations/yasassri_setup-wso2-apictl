@@ -15,9 +15,6 @@ async function setup() {
   var version = core.getInput('version');
   var url = core.getInput('tarball_location');
   
-
-  console.log("version:::: " +version)
-  console.log("URL:::: " +url)
   // If a URL not set, generate the URL based on the version
   if(url == null || url.trim() == '') {
     url = getDownloadURL(version)
@@ -52,7 +49,6 @@ if (require.main === require.cache[eval('__filename')]) {
 function getDownloadURL(version) {
 
     // If the version is provided like v4.1.0 strippingout the 'v'
-    console.log("DEBUG:::: " + version.toLowerCase().includes("v"));
     if(version.toLowerCase().includes("v")) {
         version = version.substring(version.toLowerCase().indexOf('v') + 1);
     }
