@@ -52,12 +52,13 @@ if (require.main === require.cache[eval('__filename')]) {
 function getDownloadURL(version) {
 
     // If the version is provided like v4.1.0 strippingout the 'v'
+    console.log("DEBUG:::: " + version.toLowerCase().includes("v"));
     if(version.toLowerCase().includes("v")) {
-        version = version.substring(version.toLowerCase().indexOf('v') + 1)
+        version = version.substring(version.toLowerCase().indexOf('v') + 1);
     }
-    const url = `https://github.com/wso2/product-apim-tooling/releases/download/v${version}/apictl-${version}-linux-x64.tar.gz`;
+    const url = `https://github.com/wso2/product-apim-tooling/releases/download/v${ version }/apictl-${ version }-linux-x64.tar.gz`;
 
-    return url
+    return url;
   }
   
   module.exports = { getDownloadURL }
