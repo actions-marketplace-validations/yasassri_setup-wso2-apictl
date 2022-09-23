@@ -9,6 +9,9 @@ async function setup() {
   var version = core.getInput('version');
   var url = core.getInput('tarball_location');
   
+
+  console.log("version:::: " +version)
+  console.log("URL:::: " +url)
   // If a URL not set, generate the URL based on the version
   if(url) {
     url = getDownloadURL(version)
