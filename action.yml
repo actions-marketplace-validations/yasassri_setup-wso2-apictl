@@ -1,0 +1,13 @@
+name: 'setup-wso2-apictl'
+description: 'Greet someone and record the time'
+inputs:
+  url:  # id of input
+    description: 'CLI Binary location'
+    required: false
+    default: 'https://apim.docs.wso2.com/en/4.1.0/assets/attachments/learn/api-controller/apictl-4.1.0-linux-x64.tar.gz'
+outputs:
+  time: # id of output
+    description: 'The time we greeted you'
+runs:
+  using: 'node16'
+  main: 'dist/index.js'
