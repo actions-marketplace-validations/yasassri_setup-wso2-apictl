@@ -47,9 +47,7 @@ function getDownloadURL() {
     // const extension = platform === 'win32' ? 'zip' : 'tar.gz';
     // const binPath = platform === 'win32' ? 'bin' : path.join(filename, 'bin');
     const url = 'https://github.com/wso2/product-apim-tooling/releases/download/v4.1.0/apictl-4.1.0-linux-x64.tar.gz';
-    return {
-      url
-    };
+    return url
   }
   
   module.exports = { getDownloadURL }
