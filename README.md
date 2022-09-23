@@ -1,6 +1,8 @@
 # Setup WSO2 APICTL Github Action
 
-This action will Setup WSO2 API-CTL in a Lunux environment. Since there are no usecases for setting up on Windows environments, currently only Linux environments are supported.
+WSO2 API Controller (apictl) is a command-line tool providing the capability to move APIs, API Products, and Applications across environments and to perform CI/CD operations. Furthermore, it can perform WSO2 Micro Integrator (WSO2 MI) server specific operations such as monitoring Synapse artifacts and performing MI management/administrative tasks from the command line.
+
+This custom GH action will setup WSO2 APICTL in a Linux environment. Since there are no usecases for setting up on Windows environments, currently only Linux environments are supported.
 
 ## Inputs
 

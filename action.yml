@@ -1,5 +1,6 @@
 name: 'setup-wso2-apictl'
 description: 'Setup WSO2 APICTL for WSO2 APIM/MI usecases'
+author: 'Yasassri Ratnayake'
 inputs:
   version: 
     description: 'Version of the APICTL'
@@ -12,3 +13,6 @@ inputs:
 runs:
   using: 'node16'
   main: 'dist/index.js'
+branding:
+  icon: 'terminal'
+  color: 'purple'
