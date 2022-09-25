@@ -11,7 +11,7 @@ defaults:
     shell: bash
 
 jobs:
-  test:
+  Test Versions on Different OS:
     name: Test APICTL Versions on different OS versions
     runs-on: ${{ matrix.os }}
     strategy:
@@ -27,6 +27,7 @@ jobs:
         version: ${{ matrix.version }}
     - name: Validate apictl version - ${{ matrix['version'] }}
       run: apictl version | grep ${{ matrix['version']}} # Replacing the v in version. 
+  Test with Tarball Location on Different OS:   
     name: Test APICTL with tarball location
     runs-on: ${{ matrix.os }}
     strategy:
@@ -42,6 +43,7 @@ jobs:
         tarball_location: ${{ matrix.version }}
     - name: Validate apictl version - ${{ matrix['version'] }}
       run: apictl version | grep 4.1.0 # Replacing the v in version.
+  Test variations of version:
     name: Test APICTL different Version test
     runs-on: ${{ matrix.os }}
     strategy:
