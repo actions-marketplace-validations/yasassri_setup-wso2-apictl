@@ -26,5 +26,4 @@ jobs:
       with:
         version: ${{ matrix.version }}
     - name: Validate apictl version - ${{ matrix['version'] }}
-      run: apictl version | grep ${{ matrix['version']}}
-      
+      run: apictl version | grep ${{ matrix['version']}}//v/ # Replacing the v in version. 
