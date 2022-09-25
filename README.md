@@ -45,7 +45,7 @@ jobs:
       issues: write
       pull-requests: write
     steps:
-    - uses: yasassri/setup-wso2-apictl@v1.0
+    - uses: yasassri/setup-wso2-apictl@v1.2
       with:
         version: 'v3.2.5'
     - run: apictl version
