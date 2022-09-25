@@ -17,7 +17,7 @@ jobs:
     strategy:
       matrix:
         os: [ubuntu-20.04, ubuntu-22.04, ubuntu-latest]
-        version: [4.1.0, 3.2.6, v3.1.5] # mixing the versions with "v" and without to test
+        version: [4.1.0, 3.2.6, 3.1.5] # mixing the versions with "v" and without to test
     steps:
     - name: Checkout
       uses: actions/checkout@v3
@@ -26,4 +26,34 @@ jobs:
       with:
         version: ${{ matrix.version }}
     - name: Validate apictl version - ${{ matrix['version'] }}
-      run: apictl version | sed 's/v//' | grep ${{ matrix['version']}} # Replacing the v in version. 
+      run: apictl version | grep ${{ matrix['version']}} # Replacing the v in version. 
+    name: Test APICTL with tarball location
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-20.04, ubuntu-22.04, ubuntu-latest]
+        version: [https://github.com/wso2/product-apim-tooling/releases/download/v4.1.0/apictl-4.1.0-linux-x64.tar.gz] # mixing the versions with "v" and without to test
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v3
+    - name: Setup APICTL
+      uses: ./
+      with:
+        tarball_location: ${{ matrix.version }}
+    - name: Validate apictl version - ${{ matrix['version'] }}
+      run: apictl version | grep 4.1.0 # Replacing the v in version.
+    name: Test APICTL different Version test
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-latest]
+        version: [v4.1.0] # mixing the versions with "v" and without to test
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v3
+    - name: Setup APICTL
+      uses: ./
+      with:
+        version: ${{ matrix.version }}
+    - name: Validate apictl version - ${{ matrix['version'] }}
+      run: apictl version | grep 4.1.0 # Replacing the v in version.
