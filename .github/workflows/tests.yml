@@ -12,12 +12,12 @@ defaults:
 
 jobs:
   test:
-    name: Test Versions
+    name: Test APICTL Versions on different OS versions
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        os: [buntu-18.04, ubuntu-20.04, ubuntu-22.04, ubuntu-latest]
-        versions: [4.1.0, v4.1.0]
+        os: [ubuntu-20.04, ubuntu-22.04, ubuntu-latest]
+        version: [4.1.0, 3.2.6, v3.1.5] # mixing the versions with "v" and without to test
     steps:
     - name: Checkout
       uses: actions/checkout@v3
@@ -25,5 +25,6 @@ jobs:
       uses: ./
       with:
         version: ${{ matrix.version }}
-    - name: Validate apictl Version - ${{ matrix['version'] }}
+    - name: Validate apictl version - ${{ matrix['version'] }}
       run: apictl version | grep ${{ matrix['version']}}
+      
