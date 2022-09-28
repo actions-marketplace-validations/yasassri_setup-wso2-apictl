@@ -1,6 +1,6 @@
 # Setup WSO2 APICTL Github Action
 
-[![Integration Tests](https://github.com/yasassri/setup-wso2-apictl/actions/workflows/tests.yml/badge.svg)](https://github.com/yasassri/setup-wso2-apictl/actions/workflows/tests.yml)
+[![Integration Tests](https://github.com/yasassri/setup-wso2-apictl/actions/workflows/tests.yml/badge.svg)](https://github.com/yasassri/setup-wso2-apictl/actions/workflows/tests.yml) [![Release](https://img.shields.io/github/v/release/yasassri/setup-wso2-apictl)](https://github.com/yasassri/setup-wso2-apictl/releases) [![License](https://img.shields.io/github/license/yasassri/setup-wso2-apictl?logoColor=yellow)](https://github.com/yasassri/setup-wso2-apictl/blob/main/LICENSE)
 
 WSO2 API Controller (apictl) is a command-line tool providing the capability to move APIs, API Products, and Applications across environments and to perform CI/CD operations. Furthermore, it can perform WSO2 Micro Integrator (WSO2 MI) server specific operations such as monitoring Synapse artifacts and performing MI management/administrative tasks from the command line.
 
