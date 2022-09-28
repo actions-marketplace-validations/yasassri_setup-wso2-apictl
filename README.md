@@ -12,7 +12,8 @@ This custom GH action will setup WSO2 APICTL in a Linux environment. Since there
 
 **Optional** The version of the APICTL to setup. Default `"4.1.0"`.
 
-The version will be picked from the Github releases : https://github.com/wso2/product-apim-tooling/releases. Ex: 4.1.0 or v4.1.0
+The version will be picked from the Github releases : https://github.com/wso2/product-apim-tooling/releases. 
+Ex: 4.1.0, v4.1.0, 3.2.5 etc.
 
 ## `tarball_location`
 
